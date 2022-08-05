@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>santé</title>
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+  </style>
+  <title>Dz</title>
+</head>
+
+<body>
+  {% include "hospital/navbar.html" %}
+  <br><br>
+  <center>
+
+<h3> Information sur Rdv</h3>
+
+<strong>Nom : <strong/> {{name}}<br/>
+<strong>Mobile : <strong/> {{mobile}}<br/>
+<strong>Email : <strong/>{{email}}<br/>
+<strong>Dete : <strong/>{{date}}<br/>
+<strong>Temps : <strong/>{{time}}<br/>
+<strong>Centre : <strong/>{{centre}}<br/>    
+<strong>Motif : <strong/>{{appointmentfor}}<br/>
+<center/>
+<br/><br/>
+<strong>Note: <strong/>
+On va vous contacter pour confirmer votre Rdv 
+
+
+
+</body>
+
+
+</html>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>santé</title>
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+  </style>
+  <title>dz</title>
+</head>
+
+<body>
+  {% include "hospital/navbar.html" %}
+  <br><br>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+       <div class="card"  >
+    <div class="card-body">
+      <h5 class="card-title">Statistique  </h5>
+      <h6 class="card-subtitle mb-2 text-muted"><a class="btn btn-success"  href="#">update</a></h6>
+  <table class="table ">
+    <thead>
+      <tr> 
+        <th scope="col">wilaya</th>
+        <th scope="col">cas</th>
+        <th scope="col">Action</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+    
+        {% for item in stat  %}
+          <tr>
+        <td>{{item.wilaya}}</td>
+        <td>{{item.cas}}</td><td>
+          <a href="{% url 'update' item.id%}">Mise a jour</a><br>
+          <a  href="#">supprimer</a>
+          </td>
+
+        
+         </tr>  
+        {% endfor %}
+     
+    </tbody>
+  </table>
+    </div>
+  </div>
+      </div>

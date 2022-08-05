@@ -1,0 +1,169 @@
+{% extends 'hospital/homebase.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+<head>
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-image: url('{% static "images/back.jpg" %}');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .jumbotron h5,
+    h3 {
+      text-align: center;
+    }
+
+
+    .alert {
+      margin: 0px;
+    }
+
+
+
+    .glow {
+      font-size: 50px;
+      color: white;
+      text-align: center;
+      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
+      }
+
+      to {
+        text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+      }
+    }
+  </style>
+</head>
+
+
+<div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="logo_area" style="width: 300%;height: 100px;position: absolute;left: 27%;top: 0;">
+  <img  src="{% static "images/logocovid.png" %}" >
+</div>
+  
+  <br><br><br><br><br><br><br>
+  <p>
+  <h3>VACCINATION ?</h3>
+
+  <p class="lead">
+     <a class="btn btn-primary btn-lg" href="/article" role="button">Détails</a>  
+    
+  </p>
+  <br><br>
+</div>
+
+<br><br><br><br>
+
+{% include "hospital/admin_doctor_patient_card.html" %}
+<br><br>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+ 
+              
+                    
+                        <div class="well-title">
+                            <h2>Prendre un RDV ?</h2>
+                        </div>
+                        <form action="{% url 'appoit'%}"  method="POST">
+                          {% csrf_token %}
+                            <!-- Form start -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="name">Nom et Prénom</label>
+                                        <input id="name" name="name" type="text" placeholder="Nom" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label class="control-label" for="mobile">Mobile</label>
+                                      <input id="mobile" name="mobile" type="text" placeholder="Mobile" class="form-control input-md">
+                                  </div>
+                              </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="email">Email</label>
+                                        <input id="email" name="email" type="text" placeholder="E-Mail" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="date">La Date </label>
+                                        <input id="date" name="date" type="text" placeholder="La date qui vous convient" class="form-control input-md">
+                                    </div>
+                                </div>
+                                <!-- Select Basic -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label" for="time">L'heur</label>
+                                        <select id="time" name="time" class="form-control">
+                                            <option value="8:00 to 9:00">8:00 to 9:00</option>
+                                            <option value="9:00 to 10:00">9:00 to 10:00</option>
+                                            <option value="10:00 to 1:00">10:00 to 1:00</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Select Basic -->
+                                <div class="col-md-12">
+                                  <div class="form-group">
+                                      <label class="control-label" for="centre">Centre </label>
+                                      <select id="appointmentfor" name="centre" class="form-control">
+                                          <option value="Centre de Constantine">Centre de Constantine </option>
+                                          <option value="Centre de Skikda">Centre de Skikda</option>
+                                          <option value="Centre de Annaba">Centre de Annaba</option>
+                                          <option value="Centre de Alger">Centre de Alger</option>
+                                          <option value="Centre de Oran">Centre de Oran</option>
+                                          <option value="Centre de Sétif">Centre de Sétif</option>
+                                          <option value="Centre de Sétif">Centre de Mila</option>
+                                          <option value="Centre de Sétif">Centre de Beskra</option>
+                                          <option value="Centre de Sétif">Centre d'Adrar</option>
+                                          <option value="Centre de Sétif">Centre de Soug ahrass</option>
+                                      </select>
+                                  </div>
+                              </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="appointmentfor">Motif </label>
+                                        <select id="appointmentfor" name="appointmentfor" class="form-control">
+                                            <option value="Omra">Omra </option>
+                                            <option value="vacance">Vacances</option>
+                                            <option value="Autre">Autre</option>
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                      <input type="submit" value="Prendre Rdv" class='btn btn-primary btn-lg'>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        
+                  
+                            
+        
+                        <br><br>
+
+{% endblock content %}

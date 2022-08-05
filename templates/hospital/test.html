@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>santé</title>
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+  </style>
+  <title>dz</title>
+</head>
+
+<body>
+  {% include "hospital/navbar.html" %}
+  <br><br>
+
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+       <div class="card"  >
+    <div class="card-body">
+      <h5 class="card-title">Test  </h5>
+      <h6 class="card-subtitle mb-2 text-muted"><a class="btn btn-success"  href="{% url 'create' %}">Ajouter</a></h6>
+  <table class="table ">
+    <thead>
+      <tr> 
+        <th scope="col">date</th>
+        <th scope="col">type</th>
+        <th scope="col">resultat</th>
+        <th scope="col">patient</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+        {% for item in test  %}
+          <tr>
+        <td>{{item.date}}</td>
+        <td>{{item.type}}</td>
+        <td>{{item.resultat}}</td>
+        <td>{{item.Patient}}</td>
+         </tr>  
+        {% endfor %}
+     
+    </tbody>
+  </table>
+    </div>
+  </div>
+      </div>
+
+
+      
+      <div class="col">
+       <div class="card"  >
+    <div class="card-body">
+   

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>santé</title>
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+  </style>
+  <title>dz</title>
+</head>
+
+<body>
+  {% include "hospital/navbar.html" %}
+  <br><br>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+       <div class="card"  >
+    <div class="card-body">
+
+<h5 class="card-title">Vaccination</h5>
+      <h6 class="card-subtitle mb-2 text-muted"><a class="btn btn-success"  href="{% url 'createv' %}">Ajouter </a></h6>
+      <div class="row">
+        <div class="col">
+          <div class="card card-body">
+      
+            <form method="get">
+              {{myFilter.form}}
+      
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+      
+          </div>
+        </div>
+        
+      </div>
+  <table class="table ">
+    <thead>
+      <tr> 
+       <th scope="col">Date</th>
+        <th scope="col">patient</th>
+        <th scope="col">marque</th>
+        <th scope="col">docteur</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+    
+        {% for item in vaccin  %}
+          <tr>
+        <td>{{item.date}}</td>
+        <td>{{item.patient}}</td>
+        <td>{{item.marque}}</td>
+        <td>{{item.doctor}}</td>
+         <td>
+         
+         
+         </td>
+         </tr>  
+        {% endfor %}
+     
+    </tbody>
+  </table>
+    </div>
+  </div>
+      </div>
+    </div>
+   
