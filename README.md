@@ -35,10 +35,7 @@ https://myaccount.google.com/lesssecureapps
 ```
 ## Drawbacks/LoopHoles
 - Any one can be Admin. There is no Approval required for admin account. So you can disable admin signup process and use any logic like creating superuser.
-- There should be at least one doctor in hospital before admitting patient. So first add doctor.
-- On update page of doctor/patient you must have to update password.
 
 
 
 
-�
